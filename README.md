@@ -77,6 +77,27 @@ Install for CUDA 13:
 pip install cucim-cu13
 ```
 
+### Windows (experimental source install)
+
+For native Windows Python environments, install from a Git ref:
+
+```bash
+pip install "git+https://github.com/dev-jiwoo/cucim.git@<tag-or-commit>#egg=cucim&subdirectory=python/cucim"
+```
+
+For this fork (`jiwoosong/cucim`) and tag `v26.02.01+jw.02`, use:
+
+```bash
+pip install "git+https://github.com/jiwoosong/cucim.git@v26.02.01+jw.02#egg=cucim&subdirectory=python/cucim"
+```
+
+Do **not** use `/commits/<ref>` in the URL. `pip` expects a cloneable Git repository URL (ending in `.git`) with the ref after `@`.
+
+Notes:
+- Python 3.12 compatibility for legacy `SafeConfigParser` references is patched in `setup.py`.
+- `nvidia-nvimgcodec` is Linux-only, so the pip metadata skips that dependency on Windows.
+- `cucim.clara` functionality may still be limited on Windows depending on your runtime stack.
+
 ### Notebooks
 
 Please check out our [Welcome](notebooks/Welcome.ipynb) notebook ([NBViewer](https://nbviewer.org/github/rapidsai/cucim/blob/main/notebooks/Welcome.ipynb))
